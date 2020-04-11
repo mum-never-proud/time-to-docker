@@ -1,0 +1,20 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2C2F33;
+  font-family: 'Poiret One', helvetica;
+}
+h1 {
+  font-size: 65px;
+  font-weight: lighter;
+}
+.primary-color {
+  color: #7289DA;
+}
+.text-center {
+  text-align: center;
+}
+.text-md {
+  font-size: 25px;
+}
