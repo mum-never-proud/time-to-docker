@@ -1,0 +1,42 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "dockerize nodejs",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --experimental-modules app.js",
+    "dev": "./node_modules/.bin/nodemon --experimental-modules app.js",
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mum-never-proud/time-to-docker.git"
+  },
+  "keywords": [
+    "dockerize",
+    "docker",
+    "nodejs",
+    "restful",
+    "api",
+    "countries"
+  ],
+  "author": "mum-never-proud",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mum-never-proud/time-to-docker/issues"
+  },
+  "homepage": "https://github.com/mum-never-proud/time-to-docker#readme",
+  "dependencies": {
+    "axios": "0.19.2",
+    "dotenv": "8.2.0",
+    "express": "4.17.1",
+    "express-boom": "3.0.0"
+  },
+  "devDependencies": {
+    "eslint": "6.8.0",
+    "eslint-config-airbnb-base": "14.1.0",
+    "eslint-plugin-import": "2.20.2",
+    "nodemon": "2.0.3"
+  }
+}
