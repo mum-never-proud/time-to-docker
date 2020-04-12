@@ -1,9 +1,9 @@
 import chalk from 'chalk';
-import { createBulkRecords, createSearchBody } from '../helpers/elastic-search';
 import elasticSearch from 'elasticsearch';
+import { createBulkRecords, createSearchBody } from '../helpers/elastic-search';
 import { parseJSON } from '../helpers/file-parser';
 
-const log = console.log;
+const { log } = console;
 
 export default class ElasticSearchClient {
   constructor(index, type) {
@@ -11,30 +11,28 @@ export default class ElasticSearchClient {
     this.type = type;
     this.elasticSearchClient = new elasticSearch.Client({
       host: 'es:9200',
-      log: 'trace'
+      log: 'trace',
     });
   }
 
   bootstrap(filepath, index = this.index, type = this.type) {
     this.indexExists(index)
-      .then(exists => {
+      .then((exists) => {
         if (exists) {
           log(chalk.blueBright('data already exists, skipping...'));
         } else {
-          const { index, type } = this;
-
           parseJSON(filepath)
-            .then(data => Promise.resolve(createBulkRecords(data, index, type)))
-            .then(bulkRecords => this.elasticSearchClient.bulk({ body: bulkRecords }))
+            .then((data) => Promise.resolve(createBulkRecords(data, index, type)))
+            .then((bulkRecords) => this.elasticSearchClient.bulk({ body: bulkRecords }))
             .then(() => log(chalk.greenBright('records bootstrapped successfully')))
-            .catch(err => log(chalk.redBright(err)));
+            .catch((err) => log(chalk.redBright(err)));
         }
       });
   }
 
   ping() {
     return this.elasticSearchClient.ping({
-      requestTimeout: 30000
+      requestTimeout: 30000,
     });
   }
 
@@ -44,7 +42,7 @@ export default class ElasticSearchClient {
     return this.elasticSearchClient.search({
       index,
       body: createSearchBody(query),
-      type
+      type,
     });
   }
 

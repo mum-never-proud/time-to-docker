@@ -2,7 +2,7 @@ export function createBulkRecords(data, index, type) {
   const bulkRecords = [];
 
   if (data.constructor.name === 'Array') {
-    data.forEach(record => {
+    data.forEach((record) => {
       bulkRecords.push({ index: { _index: index, _type: type } });
       bulkRecords.push(record);
     });
@@ -17,8 +17,8 @@ export function createSearchBody(query) {
     from: 0,
     query: {
       match: {
-        name: query
-      }
-    }
+        name: query,
+      },
+    },
   };
 }

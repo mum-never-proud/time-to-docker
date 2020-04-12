@@ -1,17 +1,16 @@
 import boom from 'express-boom';
 import chalk from 'chalk';
 import dotenv from 'dotenv';
-import ElasticSearchClient from './utils/ElasticSearchClient';
 import express from 'express';
+import ElasticSearchClient from './utils/ElasticSearchClient';
 
 dotenv.config();
 
 const app = express();
 const elasticSearchClient = new ElasticSearchClient('cities', 'cities_list');
-const log = console.log;
+const { log } = console;
 
 app.use(boom());
-
 
 function pingAndRetry(retries = 6) {
   if (!retries) {
