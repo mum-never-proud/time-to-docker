@@ -1,0 +1,42 @@
+{
+  "name": "multicontainers",
+  "version": "1.0.0",
+  "description": "docker multicontainers",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --es-module-specifier-resolution=node --experimental-modules app.js",
+    "dev": "./node_modules/.bin/nodemon --es-module-specifier-resolution=node --experimental-modules app.js",
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mum-never-proud/time-to-docker.git"
+  },
+  "keywords": [
+    "docker",
+    "multicontainers",
+    "nodejs",
+    "elastic",
+    "search"
+  ],
+  "author": "mum-never-proud",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mum-never-proud/time-to-docker/issues"
+  },
+  "homepage": "https://github.com/mum-never-proud/time-to-docker#readme",
+  "devDependencies": {
+    "eslint": "6.8.0",
+    "eslint-config-airbnb-base": "14.1.0",
+    "eslint-plugin-import": "2.20.2",
+    "nodemon": "2.0.3"
+  },
+  "dependencies": {
+    "chalk": "4.0.0",
+    "dotenv": "8.2.0",
+    "elasticsearch": "16.7.1",
+    "express": "4.17.1",
+    "express-boom": "3.0.0"
+  }
+}
