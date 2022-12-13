@@ -36,7 +36,7 @@
     "chalk": "4.0.0",
     "dotenv": "8.2.0",
     "elasticsearch": "16.7.1",
-    "express": "4.17.1",
+    "express": "4.17.3",
     "express-boom": "3.0.0"
   }
 }
